@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+  <script>
+    async function getContent(route) {
+      const $content = document.querySelector("#content")
+      const res = await fetch(route)
+      const json = await res.json()
+      $content.innerHTML = `
+      <p><strong>Title:</strong> ${json["title"]}</p>
+      <p><strong>Year:</strong> ${json["year"]}</p>
+      <p><strong>Description:</strong> ${json["description"]}</p>
+      `
+    }
+
+    async function requestBook(ev) {
+      await getContent("/book")
+    }
+    async function requestMovie(ev) {
+      await getContent("/movie")
+    }
+  </script>
+</head>
+
+<body>
+  <main>
+    <h1>
+      Books and Movies
+    </h1>
+
+    <div id="content">
+    </div>
+    <div>
+      <button onclick="requestBook()">Book</button>
+      <button onclick="requestMovie()">Movie</button>
+    </div>
+  </main>
+
+</body>
+
+</html>
