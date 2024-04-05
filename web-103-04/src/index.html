@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+</head>
+
+<body>
+  <main>
+    <h1>My Neat Store</h1>
+    <table>
+      <tbody>
+
+        {% for product in products %}
+        <tr>
+          <td>
+            <a href="/product/{{product.id}}">
+              <h3>{{product.name}}</h2>
+            </a>
+          </td>
+          <td>
+            <h3>${{product.price}}</h2>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </main>
+</body>
+
+</html>

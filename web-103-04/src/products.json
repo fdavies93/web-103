@@ -1,0 +1,24 @@
+[
+  {
+    "id": 0,
+    "name": "T-Shirt",
+    "description": "A cool t-shirt",
+    "price": 30,
+    "styles": {
+      "small": "A small cool t-shirt",
+      "medium": "A medium cool t-shirt",
+      "large": "A large cool t-shirt"
+    }
+  },
+  {
+    "id": 1,
+    "name": "Pants",
+    "description": "Some beautiful pants",
+    "price": 50,
+    "styles": {
+      "small": "Some small beautiful pants",
+      "medium": "Some medium beautiful pants",
+      "large": "Some large beautiful pants"
+    }
+  }
+]

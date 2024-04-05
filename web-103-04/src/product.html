@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+  <script>
+    async function getSizeDescription(sizeStr) {
+      const res = await fetch(`http://localhost:3000/api/product/{{product.id}}?size=${sizeStr}`)
+      const sizeDescription = await res.text()
+      const sizeText = document.querySelector("#sizeDescription")
+      sizeText.innerText = sizeDescription
+    }
+  </script>
+</head>
+
+<body>
+  <main>
+    <h1>{{product.name}}</h1>
+    <h2>${{product.price}}</h2>
+    <p>{{product.description}}</p>
+    <span>
+      <button onclick="getSizeDescription('small')">Small</button>
+      <button onclick="getSizeDescription('medium')">Medium</button>
+      <button onclick="getSizeDescription('large')">Large</button>
+    </span>
+    <p id="sizeDescription"></p>
+    <p><a href="/">Back to menu</a></p>
+  </main>
+</body>
+
+</html>
